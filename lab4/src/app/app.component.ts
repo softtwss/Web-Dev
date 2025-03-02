@@ -1,18 +1,32 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ProductsComponent } from './products/products.component';
+import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/products/header.component';
+import { NgFor } from '@angular/common';
+
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { HomeComponent } from './components/home/home.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, ProductsComponent],
+  imports: [HeaderComponent, NavBarComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'kaspi';
-  scrollToSection(sectionId: string) {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-  }
+  title = 'kaspi-products';
 }
 
+
+
+
+// import {Component} from '@angular/core';
+
+// @Component({
+//   selector: 'app-root',
+//   template: `
+//     Hello {{ city }}, {{ 1 + 1 }}
+//   `,
+// })
+// export class AppComponent {
+//   city = 'San Francisco';
+// }
